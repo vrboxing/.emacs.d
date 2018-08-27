@@ -13,6 +13,7 @@
 (and (bound-and-true-p tool-bar-mode) (tool-bar-mode -1))
 (and (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (and (bound-and-true-p horizontal-scroll-bar-mode) (horizontal-scroll-bar-mode -1))
+
 ;; 启动窗口大小
 ;;设置窗口位置为屏库左上角(0,0)
 (set-frame-position (selected-frame) 655 180)
@@ -23,14 +24,6 @@
       '((:eval (if (buffer-file-name)
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
-
-;; (menu-bar-mode t)
-;; (when (fboundp 'tool-bar-mode)
-;;   (tool-bar-mode -1))
-;; (when (fboundp 'scroll-bar-mode)
-;;   (scroll-bar-mode -1))
-;; (when (fboundp 'horizontal-scroll-bar-mode)
-;;   (horizontal-scroll-bar-mode -1))
 
 (setq inhibit-startup-message t
       ;; initial-scratch-message ""
@@ -142,14 +135,6 @@
 
 (global-set-key (kbd "C-+") 'cnfonts-increase-fontsize)
 (global-set-key (kbd "C--") 'cnfonts-decrease-fontsize)
-
-;; (defun chinese-fonts-setup-enable ()
-;;   "运行这个函数，可以让 emacs 启动的时候就激活 chinese-fonts-setup."
-;;   (interactive)
-;;   (setq cfs--enabled-p t)
-;;   (if (and (fboundp 'daemonp) (daemonp))
-;;       (add-hook 'after-make-frame-functions #'cfs-set-font-with-saved-step)
-;;     (add-hook 'window-setup-hook #'cfs-set-font-with-saved-step)))
 
 (provide 'init-ui)
 
